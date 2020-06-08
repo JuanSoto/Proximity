@@ -1,0 +1,31 @@
+# compiled output
+/build
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+/.vscode
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# misc
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+
+#System Files
+.DS_Store
+Thumbs.db
+npm-debug.log*
+
+yarn-error.log
+.nyc_output

@@ -1,0 +1,109 @@
+{
+  "info": {
+    "title": "Proximity",
+    "version": "1.0.0",
+    "description": "Proximity code challenge"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "swagger": "2.0",
+  "paths": {
+    "/vehicles/": {
+      "get": {
+        "tags": [
+          "Vehicles"
+        ],
+        "description": "Get all the records on DB",
+        "responses": {
+          "200": {
+            "description": "Return an array with all records on DB"
+          },
+          "400": {
+            "description": "Returns an error",
+            "schema": {
+              "type": "object",
+              "title": "error",
+              "required": [
+                "error",
+                "message"
+              ],
+              "properties": {
+                "error": {
+                  "type": "integer"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicles/uploadProviderCsv": {
+      "post": {
+        "tags": [
+          "Vehicles"
+        ],
+        "description": "Upload data for a Provider from a CSV file",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "name of a provider for upload a corresponding CSV file with new data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "provider": {
+                  "type": "string",
+                  "description": "Provider name for upload a new CSV file"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns result of process"
+          },
+          "400": {
+            "description": "return error message",
+            "schema": {
+              "type": "object",
+              "title": "result",
+              "required": [
+                "message"
+              ],
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "return error message",
+            "schema": {
+              "type": "object",
+              "title": "result",
+              "required": [
+                "message"
+              ],
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "responses": {},
+  "parameters": {},
+  "securityDefinitions": {},
+  "tags": []
+}
